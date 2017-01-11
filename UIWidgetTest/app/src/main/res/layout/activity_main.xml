@@ -43,4 +43,13 @@
         android:src="@mipmap/ic_launcher"
         />
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_view"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        />
+
 </RelativeLayout>
