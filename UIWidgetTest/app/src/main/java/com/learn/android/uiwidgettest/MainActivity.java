@@ -1,6 +1,8 @@
 package com.learn.android.uiwidgettest;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import static android.R.attr.dial;
 import static android.R.attr.onClick;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -45,6 +48,26 @@ public void onClick(View var1) {
             int progress = progressBar.getProgress();
             progress = progress + 10;
             progressBar.setProgress(progress);
+
+            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+            dialog.setTitle("This is Dialog");
+            dialog.setMessage("Something important.");
+            dialog.setCancelable(false);
+            dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+
+            dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+
+            dialog.show();
             break;
         default:
             break;
