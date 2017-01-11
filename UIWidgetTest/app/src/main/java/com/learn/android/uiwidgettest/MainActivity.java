@@ -1,6 +1,7 @@
 package com.learn.android.uiwidgettest;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import static android.R.attr.breadCrumbShortTitle;
 import static android.R.attr.dial;
 import static android.R.attr.onClick;
 
@@ -27,6 +29,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(this);
+        button = (Button)findViewById(R.id.button2);
+        button.setOnClickListener(this);
+
         editText = (EditText)findViewById(R.id.edit_text);
         imageView = (ImageView)findViewById(R.id.image_view);
         progressBar = (ProgressBar)findViewById(R.id.progress_bar);
@@ -68,6 +73,13 @@ public void onClick(View var1) {
             });
 
             dialog.show();
+            break;
+        case R.id.button2:
+            ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+            progressDialog.setTitle("This is ProgressDialog");
+            progressDialog.setMessage("Loading...");
+            progressDialog.setCancelable(true);
+            progressDialog.show();
             break;
         default:
             break;
